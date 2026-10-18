@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+  <defs>
+    <radialGradient id="bgGlow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#F59E0B" stop-opacity="0.3"/>
+      <stop offset="100%" stop-color="#0A0E17" stop-opacity="1"/>
+    </radialGradient>
+    <linearGradient id="goldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FDE047"/>
+      <stop offset="50%" stop-color="#F59E0B"/>
+      <stop offset="100%" stop-color="#B45309"/>
+    </linearGradient>
+  </defs>
+  <rect width="512" height="512" fill="#0A0E17"/>
+  <circle cx="256" cy="256" r="230" fill="url(#bgGlow)"/>
+  
+  <!-- Outer Crest -->
+  <polygon points="256,48 440,96 424,312 256,464 88,312 72,96" fill="#111827" stroke="url(#goldGrad)" stroke-width="12" stroke-linejoin="round"/>
+  <!-- Inner Rim -->
+  <polygon points="256,76 414,116 400,296 256,432 112,296 98,116" fill="none" stroke="#D97706" stroke-width="4" stroke-opacity="0.8"/>
+  
+  <!-- 8-Point Mythic Star -->
+  <g fill="url(#goldGrad)" stroke="#FEF08A" stroke-width="3">
+    <polygon points="256,128 276,216 352,192 296,256 352,320 276,296 256,384 236,296 160,320 216,256 160,192 236,216"/>
+  </g>
+  
+  <!-- Core Diamond -->
+  <polygon points="256,220 286,256 256,292 226,256" fill="#FFFFFF"/>
+</svg>

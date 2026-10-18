@@ -1,0 +1,8 @@
+[{
+      "relation": ["delegate_permission/common.handle_all_urls"],
+      "target": {
+        "namespace": "android_app",
+        "package_name": "com.dawntactics.ai",
+        "sha256_cert_fingerprints": ["DF:78:24:53:1E:19:8C:09:44:00:B0:02:08:C1:18:9B:84:7B:F8:7E:1E:02:49:BE:6D:AB:0A:BE:18:B3:B5:01"]
+      }
+    }]

@@ -1,0 +1,17 @@
+node_modules/
+dawntactics_mobile/
+android_standalone_build/
+android_twa/
+.cxx/
+cloudflared.exe
+*.keystore
+*.zip
+*.idsig
+*.aab
+*.apk
+DawnTactics.apk
+.well-known/
+scripts/
+.idea/
+.DS_Store
+*.log

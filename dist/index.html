@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en" class="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/png" href="./icon-192.png" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <meta name="description" content="Standalone pro esports draft simulator, 5-man team comp builder, live 1v1 lane clash matrix, and reactive item counter analyzer for Mobile Legends: Bang Bang" />
+    <meta name="theme-color" content="#0A0E17" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta name="apple-mobile-web-app-title" content="DawnTactics AI" />
+    <meta name="application-name" content="DawnTactics AI" />
+    <link rel="manifest" href="./manifest.json" />
+    <link rel="icon" type="image/svg+xml" href="./icon.svg" />
+    <link rel="icon" type="image/png" sizes="192x192" href="./icon-192.png" />
+    <link rel="icon" type="image/png" sizes="512x512" href="./icon-512.png" />
+    <link rel="apple-touch-icon" sizes="192x192" href="./icon-192.png" />
+    <link rel="apple-touch-icon" sizes="512x512" href="./icon-512.png" />
+    <title>DawnTactics AI | Land of Dawn Draft Intelligence & Itemization Engine</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;900&family=Rajdhani:wght@500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script>
+      if ('serviceWorker' in navigator) {
+        window.addEventListener('load', () => {
+          navigator.serviceWorker.register('/sw.js')
+            .then(reg => console.log('[PWA] Service Worker registered:', reg.scope))
+            .catch(err => console.warn('[PWA] Service Worker registration failed:', err));
+        });
+      }
+    </script>
+    <script type="module" crossorigin src="./assets/index-CTfJqGMD.js"></script>
+    <link rel="stylesheet" crossorigin href="./assets/index-TPkgoPbQ.css">
+  </head>
+  <body class="bg-canvas text-slate-100 font-sans antialiased selection:bg-gold-500 selection:text-black min-h-screen">
+    <div id="root"></div>
+  </body>
+</html>

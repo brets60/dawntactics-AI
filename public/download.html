@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+  <title>Download DawnTactics AI (iPhone & Android)</title>
+  <link rel="icon" type="image/png" href="/icon-192.png">
+  <link rel="apple-touch-icon" href="/icon-192.png">
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      background-color: #0A0E17;
+      color: #F1F5F9;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 16px;
+      text-align: center;
+    }
+    .card {
+      background: #111827;
+      border: 1px solid rgba(245, 158, 11, 0.4);
+      box-shadow: 0 0 35px rgba(245, 158, 11, 0.2);
+      border-radius: 24px;
+      max-width: 480px;
+      width: 100%;
+      padding: 28px 20px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    .logo-container {
+      width: 88px;
+      height: 88px;
+      border-radius: 22px;
+      background: linear-gradient(135deg, #F59E0B, #B45309);
+      padding: 4px;
+      box-shadow: 0 8px 24px rgba(245, 158, 11, 0.35);
+      margin-bottom: 16px;
+    }
+    .logo-container img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      border-radius: 18px;
+    }
+    h1 {
+      font-size: 22px;
+      font-weight: 800;
+      letter-spacing: 0.5px;
+      color: #F8FAFC;
+      margin-bottom: 4px;
+    }
+    .subtitle {
+      font-size: 13px;
+      color: #94A3B8;
+      margin-bottom: 16px;
+      line-height: 1.4;
+    }
+
+    /* Device Tabs */
+    .tabs-container {
+      display: flex;
+      width: 100%;
+      background: #0A0E17;
+      border: 1px solid #1E293B;
+      border-radius: 14px;
+      padding: 4px;
+      margin-bottom: 20px;
+      gap: 4px;
+    }
+    .tab-btn {
+      flex: 1;
+      padding: 10px 12px;
+      font-size: 13px;
+      font-weight: 700;
+      border: none;
+      background: transparent;
+      color: #94A3B8;
+      border-radius: 10px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      transition: all 0.2s ease;
+    }
+    .tab-btn.active {
+      background: #1E293B;
+      color: #FBBF24;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.4);
+    }
+    .tab-btn.active.ios {
+      color: #38BDF8;
+      border: 1px solid rgba(56, 189, 248, 0.3);
+    }
+    .tab-btn.active.android {
+      color: #10B981;
+      border: 1px solid rgba(16, 185, 129, 0.3);
+    }
+
+    .badges {
+      display: flex;
+      gap: 6px;
+      margin-bottom: 20px;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+    .badge {
+      font-size: 11px;
+      font-weight: 700;
+      padding: 4px 10px;
+      border-radius: 999px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+    .badge-ios { background: #0C4A6E; color: #7DD3FC; border: 1px solid #0284C744; }
+    .badge-android { background: #064E3B; color: #6EE7B7; border: 1px solid #05966944; }
+    .badge-offline { background: #1E293B; color: #FBBF24; border: 1px solid #F59E0B44; }
+
+    /* Action Buttons */
+    .btn-primary {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      width: 100%;
+      background: linear-gradient(135deg, #0EA5E9, #0284C7);
+      color: #FFFFFF;
+      font-size: 15px;
+      font-weight: 800;
+      text-decoration: none;
+      padding: 15px 20px;
+      border-radius: 16px;
+      box-shadow: 0 8px 20px rgba(14, 165, 233, 0.35);
+      transition: transform 0.15s ease, background 0.2s ease;
+      cursor: pointer;
+      margin-bottom: 12px;
+    }
+    .btn-primary:active {
+      transform: scale(0.98);
+    }
+    .btn-android {
+      background: linear-gradient(135deg, #F59E0B, #D97706);
+      color: #0A0E17;
+      box-shadow: 0 8px 20px rgba(245, 158, 11, 0.35);
+    }
+
+    .btn-secondary {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      width: 100%;
+      background: #1E293B;
+      color: #CBD5E1;
+      font-size: 13px;
+      font-weight: 700;
+      text-decoration: none;
+      padding: 12px 18px;
+      border-radius: 14px;
+      border: 1px solid #334155;
+      transition: all 0.2s ease;
+      cursor: pointer;
+      margin-bottom: 18px;
+    }
+    .btn-secondary:hover {
+      background: #334155;
+      color: #FFFFFF;
+    }
+
+    /* Instruction Cards */
+    .instructions-box {
+      text-align: left;
+      width: 100%;
+      background: #0A0E17;
+      border-radius: 16px;
+      padding: 16px;
+      border: 1px solid #1F2937;
+      margin-top: 6px;
+    }
+    .instructions-box h3 {
+      font-size: 12px;
+      color: #FBBF24;
+      text-transform: uppercase;
+      letter-spacing: 0.8px;
+      margin-bottom: 10px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .instructions-box h3.ios {
+      color: #38BDF8;
+    }
+    .instructions-box ol {
+      padding-left: 20px;
+      font-size: 12px;
+      color: #CBD5E1;
+      line-height: 1.6;
+    }
+    .instructions-box li {
+      margin-bottom: 6px;
+    }
+    .instructions-box strong {
+      color: #F8FAFC;
+    }
+
+    .step-icon {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 20px;
+      height: 20px;
+      border-radius: 4px;
+      background: #1E293B;
+      color: #38BDF8;
+      font-size: 11px;
+      vertical-align: middle;
+      margin: 0 2px;
+    }
+
+    .notice {
+      font-size: 12px;
+      margin-bottom: 12px;
+      font-weight: 600;
+    }
+    .notice.success { color: #10B981; }
+    .notice.info { color: #38BDF8; }
+
+    .footer-note {
+      margin-top: 18px;
+      font-size: 11px;
+      color: #64748B;
+      line-height: 1.5;
+    }
+    .footer-note span {
+      color: #FBBF24;
+      font-weight: 600;
+    }
+
+    .hidden { display: none !important; }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <div class="logo-container">
+      <img src="/icon-192.png" alt="DawnTactics AI Logo">
+    </div>
+
+    <h1>DawnTactics AI</h1>
+    <p class="subtitle">Land of Dawn Esports Draft Intelligence & Flora-Style DawnOracle AI</p>
+
+    <!-- Platform Selector Tabs -->
+    <div class="tabs-container">
+      <button id="tabIos" class="tab-btn ios" onclick="switchPlatform('ios')">
+        <span>🍎 Apple iPhone / iPad</span>
+      </button>
+      <button id="tabAndroid" class="tab-btn android" onclick="switchPlatform('android')">
+        <span>🤖 Android APK</span>
+      </button>
+    </div>
+
+    <!-- ==================== IPHONE / IOS SECTION ==================== -->
+    <div id="sectionIos" class="w-full">
+      <div class="badges">
+        <span class="badge badge-ios">🍎 iOS 14.0+</span>
+        <span class="badge badge-offline">⚡ 100% Offline PWA</span>
+        <span class="badge badge-ios">📱 Full Screen Native App</span>
+      </div>
+
+      <div class="notice info">
+        📲 iPhone & iPad can install DawnTactics AI directly without the App Store!
+      </div>
+
+      <!-- Action 1: Add to Home Screen (Safari PWA) -->
+      <a href="/" class="btn-primary">
+        <span>🚀 OPEN APP & ADD TO HOME SCREEN</span>
+      </a>
+
+      <!-- Action 2: Download Apple WebClip Profile -->
+      <a href="/DawnTactics.mobileconfig" download="DawnTactics.mobileconfig" class="btn-secondary">
+        <span>📥 Download Apple iOS Profile (.mobileconfig)</span>
+      </a>
+
+      <!-- Step-by-Step iOS Instructions -->
+      <div class="instructions-box">
+        <h3 class="ios">Option 1: Safari "Add to Home Screen" (Recommended)</h3>
+        <ol>
+          <li>Open <strong>Safari</strong> on your iPhone and go to <strong>DawnTactics AI</strong>.</li>
+          <li>Tap the <strong>Share button</strong> <span class="step-icon">⎋</span> (the square box with an arrow pointing up at the bottom of Safari).</li>
+          <li>Scroll down the share sheet and tap <strong>"Add to Home Screen"</strong> <span class="step-icon">➕</span>.</li>
+          <li>Tap <strong>"Add"</strong> in the top-right corner.</li>
+          <li>Done! <strong>DawnTactics AI</strong> will appear on your iPhone home screen with the official Land of Dawn icon, running in full-screen native mode!</li>
+        </ol>
+      </div>
+
+      <div class="instructions-box" style="margin-top: 10px;">
+        <h3 class="ios">Option 2: 1-Click Apple Profile Install</h3>
+        <ol>
+          <li>Tap <strong>"Download Apple iOS Profile"</strong> above.</li>
+          <li>Tap <strong>Allow</strong> when Safari asks to download a configuration profile.</li>
+          <li>Open your iPhone <strong>Settings</strong> app ➔ tap <strong>"Profile Downloaded"</strong> at the top.</li>
+          <li>Tap <strong>Install</strong> in the top-right corner.</li>
+          <li>The DawnTactics app icon is pinned right to your iPhone home screen!</li>
+        </ol>
+      </div>
+    </div>
+
+    <!-- ==================== ANDROID SECTION ==================== -->
+    <div id="sectionAndroid" class="w-full hidden">
+      <div class="badges">
+        <span class="badge badge-android">🤖 Android 7.0+</span>
+        <span class="badge badge-offline">⚡ 100% Offline</span>
+        <span class="badge badge-android">📦 144.5 MB Native APK</span>
+      </div>
+
+      <div id="androidNotice" class="notice success">
+        ⬇️ Starting your Android download automatically...
+      </div>
+
+      <a id="downloadBtn" href="/DawnTactics.apk" download="DawnTactics.apk" class="btn-primary btn-android">
+        <span>📥 DOWNLOAD NATIVE APK (144.5 MB)</span>
+      </a>
+
+      <div class="instructions-box">
+        <h3>Quick Android Install Steps:</h3>
+        <ol>
+          <li>If Chrome says <em>"File might be harmful"</em>, tap <strong>Download anyway</strong>.</li>
+          <li>When download finishes, tap <strong>Open</strong> in the notification bar.</li>
+          <li>If prompted, tap <strong>Settings</strong> ➔ toggle <strong>Allow from this source</strong>.</li>
+          <li>Tap <strong>Install</strong>. Once installed, it works <strong>100% offline</strong>!</li>
+        </ol>
+      </div>
+    </div>
+
+    <div class="footer-note">
+      💡 <span>Full Roster & AI Coach Included:</span><br>
+      All 134 MLBB heroes, 58 items, 3-tier emblem system, and the Flora-style DawnOracle tactical AI!
+    </div>
+  </div>
+
+  <script>
+    // Detect device platform
+    const userAgent = navigator.userAgent || navigator.vendor || window.opera;
+    const isIOS = /iPad|iPhone|iPod/.test(userAgent) || (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1);
+
+    function switchPlatform(platform) {
+      const tabIos = document.getElementById('tabIos');
+      const tabAndroid = document.getElementById('tabAndroid');
+      const sectionIos = document.getElementById('sectionIos');
+      const sectionAndroid = document.getElementById('sectionAndroid');
+
+      if (platform === 'ios') {
+        tabIos.classList.add('active');
+        tabAndroid.classList.remove('active');
+        sectionIos.classList.remove('hidden');
+        sectionAndroid.classList.add('hidden');
+      } else {
+        tabAndroid.classList.add('active');
+        tabIos.classList.remove('active');
+        sectionAndroid.classList.remove('hidden');
+        sectionIos.classList.add('hidden');
+      }
+    }
+
+    // Initialize based on detected device
+    if (isIOS) {
+      switchPlatform('ios');
+    } else {
+      switchPlatform('android');
+      // Auto-trigger Android APK download after 600ms if on Android/Desktop
+      setTimeout(function() {
+        const a = document.createElement('a');
+        a.href = '/DawnTactics.apk';
+        a.download = 'DawnTactics.apk';
+        document.body.appendChild(a);
+        a.click();
+        document.body.removeChild(a);
+        const notice = document.getElementById('androidNotice');
+        if (notice) {
+          notice.innerHTML = '✅ APK Download initiated! If it didn\'t start, tap the button below.';
+        }
+      }, 600);
+    }
+  </script>
+</body>
+</html>

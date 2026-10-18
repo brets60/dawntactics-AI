@@ -1,0 +1,117 @@
+{
+  "$schema": "https://json.schemastore.org/web-manifest-combined.json",
+  "name": "DawnTactics AI — MLBB Draft & Itemization Intelligence",
+  "short_name": "DawnTactics",
+  "description": "Standalone pro esports draft simulator, 5-man team comp builder, live 1v1 lane clash matrix, and reactive item counter analyzer for Mobile Legends: Bang Bang",
+  "id": "com.dawntactics.ai",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "display_override": [
+    "window-controls-overlay",
+    "standalone",
+    "minimal-ui"
+  ],
+  "background_color": "#0A0E17",
+  "theme_color": "#0A0E17",
+  "orientation": "any",
+  "lang": "en",
+  "dir": "ltr",
+  "categories": [
+    "games",
+    "entertainment",
+    "utilities",
+    "productivity"
+  ],
+  "icons": [
+    {
+      "src": "/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/icon-maskable-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "maskable"
+    },
+    {
+      "src": "/icon-maskable-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    },
+    {
+      "src": "/icon.svg",
+      "sizes": "192x192 512x512",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    }
+  ],
+  "screenshots": [
+    {
+      "src": "/screenshot-desktop.png",
+      "sizes": "1280x720",
+      "type": "image/png",
+      "form_factor": "wide",
+      "label": "DawnTactics AI Desktop Esports Draft Board"
+    },
+    {
+      "src": "/screenshot-mobile.png",
+      "sizes": "720x1280",
+      "type": "image/png",
+      "form_factor": "narrow",
+      "label": "DawnTactics AI Mobile Draft Strategy View"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "Live Draft Simulator",
+      "short_name": "Live Draft",
+      "description": "Start official 20-step tournament draft against AI",
+      "url": "/#draft",
+      "icons": [
+        {
+          "src": "/icon-192.png",
+          "sizes": "192x192",
+          "type": "image/png"
+        }
+      ]
+    },
+    {
+      "name": "Equipment Matrix",
+      "short_name": "Item Builder",
+      "description": "6-slot loadout builder with live combat math & duel sim",
+      "url": "/#itemization",
+      "icons": [
+        {
+          "src": "/icon-192.png",
+          "sizes": "192x192",
+          "type": "image/png"
+        }
+      ]
+    },
+    {
+      "name": "Emblem Optimizer",
+      "short_name": "Emblems",
+      "description": "Custom 3-tier emblem talent combinations",
+      "url": "/#emblems",
+      "icons": [
+        {
+          "src": "/icon-192.png",
+          "sizes": "192x192",
+          "type": "image/png"
+        }
+      ]
+    }
+  ],
+  "prefer_related_applications": false,
+  "related_applications": []
+}
